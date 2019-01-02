@@ -1,8 +1,12 @@
-﻿namespace BusBoard.ConsoleApp
+﻿using System.Collections.Generic;
+
+namespace BusBoard.ConsoleApp.ApiObjects
 {
-  public class StopPoints
+  public class Journeys
     {
-    public string name { get; set; }
-    public string id { get; set; }
+    public string startDateTime { get; set; }
+    public string arrivalDateTime { get; set; }
+    public int duration { get; set; }
+    public List<Legs> legs { get; set; }
     }
 }

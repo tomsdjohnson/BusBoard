@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace BusBoard.ConsoleApp.ApiObjects
 {
-    public class Instruction
+    class Returned 
     {
-     public string summary { get; set; }
-     public string detailed { get; set; }
+      new string[] journeys { get; set; }
     }
 }

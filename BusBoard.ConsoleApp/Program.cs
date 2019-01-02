@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
+using BusBoard.ConsoleApp.ApiObjects;
+using Newtonsoft.Json;
 
 namespace BusBoard.ConsoleApp
 {
@@ -17,6 +19,11 @@ namespace BusBoard.ConsoleApp
 
       //calls api
       var predictions = new TflApi().GetArrivalPredictions(fromStopId, toStopId);
+
+      Returned iHopeThisFuckingWorks = JsonConvert.DeserializeObject<Returned>(predictions);
+
+
+      Console.WriteLine($"PLLLLLLLLLLLLLLLLLLLLLLLLLEEEEEEEEEEEEEEEEEEAAAAAASSSSSSSSSSSSSSSEEEEEE: {iHopeThisFuckingWorks}"); //spoiler it doesn't work
 
       //displays result
       DisplayPredictions(predictions);

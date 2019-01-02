@@ -39,6 +39,9 @@
     <Reference Include="Log4Net.LogglyAppender, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Log4Net.LogglyAppender.1.0.3\lib\net451\Log4Net.LogglyAppender.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp, Version=104.4.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Log4Net.LogglyAppender.1.0.3\lib\net451\RestSharp.dll</HintPath>
     </Reference>
@@ -52,7 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="StopPoints.cs" />
+    <Compile Include="ApiObjects\Returned.cs" />
+    <Compile Include="ApiObjects\StopPoints.cs" />
+    <Compile Include="ApiObjects\Instruction.cs" />
+    <Compile Include="ApiObjects\Legs.cs" />
+    <Compile Include="ApiObjects\Journeys.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TflApi.cs" />
@@ -61,6 +68,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
