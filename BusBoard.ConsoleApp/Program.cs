@@ -19,8 +19,7 @@ namespace BusBoard.ConsoleApp
       var predictions = new TflApi().GetArrivalPredictions(fromStopId, toStopId);
 
       //displays result
-      var predictionsToDisplay = predictions.OrderBy(p => p.duration).Take(5);
-      DisplayPredictions(predictionsToDisplay);
+      DisplayPredictions(predictions);
       Console.ReadLine();
     }
 
@@ -30,12 +29,9 @@ namespace BusBoard.ConsoleApp
       return Console.ReadLine();
     }
 
-    private static void DisplayPredictions(IEnumerable<journeys> predictionsToDisplay)
-    {
-      foreach (var prediction in predictionsToDisplay)
-      {
-        Console.WriteLine($"Time: {prediction.duration}");
-      }
+    private static void DisplayPredictions(string predictionsToDisplay)
+    { 
+     Console.WriteLine($"Json: {predictionsToDisplay}"); 
     }
   }
 }
