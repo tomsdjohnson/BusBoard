@@ -8,16 +8,16 @@ namespace BusBoard.ConsoleApp.ApiObjects
 {
     class Returned
     {
-      private Journeys[] journeys;
+        public Journeys[] Journeys { get; set;}
 
-        public Returned(Journeys[] journeys)
-      {
-          this.journeys = journeys;
-      }
-
-      public Journeys[] GetJourneys()
-      {
-       return journeys;
-      }
+//        private Journeys[] journeys;
+//        public Returned(Journeys[] journeys)
+//        {
+//            this.journeys = journeys;
+//        }
+//        public Journeys[] GetJourneys()
+//        {
+//            return journeys;
+//        }
     }
 }
