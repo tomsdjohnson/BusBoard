@@ -8,7 +8,7 @@ namespace BusBoard.ConsoleApp.ApiObjects
 {
     public class Instruction
     {
-     public string summary { get; set; }
-     public string detailed { get; set; }
+     public string Summary { get; set; }
+     public string Detailed { get; set; }
     }
 }

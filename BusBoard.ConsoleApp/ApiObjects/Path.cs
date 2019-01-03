@@ -8,5 +8,6 @@ namespace BusBoard.ConsoleApp.ApiObjects
 {
     class Path
     {
+        public StopPoints[] StopPoints { get; set; }
     }
 }

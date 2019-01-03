@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BusBoard.ConsoleApp.ApiObjects
 {
-    class DeparturePoint
+    class DepartureAndArrivalPoint
     {
+        public string IcsCode { get; set; }
+        public string CommonName { get; set; }
     }
 }

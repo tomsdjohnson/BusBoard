@@ -9,8 +9,8 @@ namespace BusBoard.ConsoleApp.ApiObjects
         public string ArrivalDateTime { get; set; }
         public string StartDateTime { get; set; }
         public int Duration { get; set; }
-        public DeparturePoint DeparturePoint { get; set; }
-        public ArrivalPoint ArrivalPoint { get; set; }
+        public DepartureAndArrivalPoint DeparturePoint { get; set; }
+        public DepartureAndArrivalPoint ArrivalPoint { get; set; }
         public Path Path { get; set; }
     }
 }

@@ -14,16 +14,12 @@ namespace BusBoard.ConsoleApp
       ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
       //gets stop inputs
-      var fromStopId = "1000067"; //PromptForStopId();
-      var toStopId = "1000013"; //PromptForStopId();
+      var fromStopId = "1000144"; //PromptForStopId(); - EastFinchley
+      var toStopId = "1000013"; //PromptForStopId(); - MarbleArch
 
-      var predictions = new TflApi().GetArrivalPredictions(fromStopId, toStopId); //returns api json as string
-      Returned iHopeThisFuckingWorks = JsonConvert.DeserializeObject<Returned>(predictions); //puts json into object "Returned"
-
-      Console.WriteLine(iHopeThisFuckingWorks.Journeys[0].Legs[0].Duration); //spoiler it doesn't work
-
-      //displays result
-      DisplayPredictions(predictions);
+      var directionsAsJson = new TflApi().GetArrivalPredictions(fromStopId, toStopId); //returns api json as string
+      Returned directions = JsonConvert.DeserializeObject<Returned>(directionsAsJson); //puts json into objects
+      DisplayDirections(directions);//displays result
       Console.ReadLine();
     }
 
@@ -33,9 +29,21 @@ namespace BusBoard.ConsoleApp
       return Console.ReadLine();
     }
 
-    private static void DisplayPredictions(string predictionsToDisplay)
-    { 
-     //Console.WriteLine($"Json: {predictionsToDisplay}"); 
+    private static void DisplayDirections(Returned directions)
+    {
+      Console.WriteLine($"{directions.Journeys[0].Duration} mins");//length of entire journey
+      Console.WriteLine();
+      Console.WriteLine(directions.Journeys[0].Legs[0].DeparturePoint.CommonName);
+
+      foreach (var i in directions.Journeys[0].Legs)
+      {
+        Console.WriteLine("█");
+        Console.WriteLine("█");
+        Console.WriteLine($"█ {i.Duration} mins ({i.Instruction.Detailed})");
+        Console.WriteLine("█");
+        Console.WriteLine("█");
+        Console.WriteLine(i.ArrivalPoint.CommonName);
+      }
     }
   }
 }
