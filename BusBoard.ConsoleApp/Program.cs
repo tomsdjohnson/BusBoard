@@ -17,18 +17,10 @@ namespace BusBoard.ConsoleApp
       var fromStopId = "1000067"; //PromptForStopId();
       var toStopId = "1000013"; //PromptForStopId();
 
-      //calls api
-      var predictions = new TflApi().GetArrivalPredictions(fromStopId, toStopId);
+      var predictions = new TflApi().GetArrivalPredictions(fromStopId, toStopId); //returns api json as string
+      Returned iHopeThisFuckingWorks = JsonConvert.DeserializeObject<Returned>(predictions); //puts json into object "Returned"
 
-
-
-
-
-
-      Returned iHopeThisFuckingWorks = JsonConvert.DeserializeObject<Returned>(predictions);
-
-
-      Console.WriteLine($"PLLLLLLLLLLLLLLLLLLLLLLLLLEEEEEEEEEEEEEEEEEEAAAAAASSSSSSSSSSSSSSSEEEEEE: {iHopeThisFuckingWorks.getJourneyVector()}"); //spoiler it doesn't work
+      Console.WriteLine(iHopeThisFuckingWorks.getJourneys()[0]); //spoiler it doesn't work
 
       //displays result
       DisplayPredictions(predictions);
