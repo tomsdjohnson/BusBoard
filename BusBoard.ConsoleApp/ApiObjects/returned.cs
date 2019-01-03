@@ -9,15 +9,5 @@ namespace BusBoard.ConsoleApp.ApiObjects
     class Returned
     {
         public Journeys[] Journeys { get; set;}
-
-//        private Journeys[] journeys;
-//        public Returned(Journeys[] journeys)
-//        {
-//            this.journeys = journeys;
-//        }
-//        public Journeys[] GetJourneys()
-//        {
-//            return journeys;
-//        }
     }
 }
