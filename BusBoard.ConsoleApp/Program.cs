@@ -20,7 +20,7 @@ namespace BusBoard.ConsoleApp
       var predictions = new TflApi().GetArrivalPredictions(fromStopId, toStopId); //returns api json as string
       Returned iHopeThisFuckingWorks = JsonConvert.DeserializeObject<Returned>(predictions); //puts json into object "Returned"
 
-      Console.WriteLine(iHopeThisFuckingWorks.getJourneys()[0]); //spoiler it doesn't work
+      Console.WriteLine(iHopeThisFuckingWorks.GetJourneys()[0].GetDuration()); //spoiler it doesn't work
 
       //displays result
       DisplayPredictions(predictions);

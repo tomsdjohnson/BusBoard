@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiObjects\ArrivalPoint.cs" />
+    <Compile Include="ApiObjects\DeparturePoint.cs" />
+    <Compile Include="ApiObjects\Path.cs" />
     <Compile Include="ApiObjects\Returned.cs" />
     <Compile Include="ApiObjects\StopPoints.cs" />
     <Compile Include="ApiObjects\Instruction.cs" />

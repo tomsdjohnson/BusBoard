@@ -2,11 +2,40 @@
 
 namespace BusBoard.ConsoleApp.ApiObjects
 {
-  public class Journeys
+    class Journeys
     {
-    public string startDateTime { get; set; }
-    public string arrivalDateTime { get; set; }
-    public int duration { get; set; }
-    public List<Legs> legs { get; set; }
+        private string startDateTime;
+        private string arrivalDateTime;
+        private int duration;
+        private Legs[] legs;
+
+        public Journeys(string startDateTime, string arrivalDateTime, int duration, Legs[] legs)
+        {
+            this.startDateTime = startDateTime;
+            this.arrivalDateTime = arrivalDateTime;
+            this.duration = duration;
+            this.legs = legs;
+        }
+
+        public string GetStartDateTime()
+        {
+            return startDateTime;
+        }
+
+        public string GetArrivalDateTime()
+        {
+            return arrivalDateTime;
+        }
+
+        public int GetDuration()
+        {
+            return duration;
+        }
+
+        public Legs[] GetLegs()
+        {
+            return legs;
+        }
+
     }
 }

@@ -8,14 +8,14 @@ namespace BusBoard.ConsoleApp.ApiObjects
 {
     class Returned
     {
-      private string[] journeys;
+      private Journeys[] journeys;
 
-        public Returned(string[] journeys)
+        public Returned(Journeys[] journeys)
       {
           this.journeys = journeys;
       }
 
-      public string[] getJourneys()
+      public Journeys[] GetJourneys()
       {
        return journeys;
       }
