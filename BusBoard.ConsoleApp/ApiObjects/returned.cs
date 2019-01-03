@@ -6,8 +6,26 @@ using System.Threading.Tasks;
 
 namespace BusBoard.ConsoleApp.ApiObjects
 {
-    class Returned 
+    class Returned
     {
-      new string[] journeys { get; set; }
+      //private string[] journeys;
+      private string journeyVector;
+
+        public Returned(string journeyVector)
+      {
+          //this.journeys = journeys;
+          this.journeyVector = journeyVector;
+      }
+
+      //public string[] getJourneys()
+      //{
+          //return journeys;
+      //}
+
+      public string getJourneyVector()
+      {
+          return journeyVector;
+      }
+
     }
 }

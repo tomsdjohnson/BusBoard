@@ -20,10 +20,15 @@ namespace BusBoard.ConsoleApp
       //calls api
       var predictions = new TflApi().GetArrivalPredictions(fromStopId, toStopId);
 
+
+
+
+
+
       Returned iHopeThisFuckingWorks = JsonConvert.DeserializeObject<Returned>(predictions);
 
 
-      Console.WriteLine($"PLLLLLLLLLLLLLLLLLLLLLLLLLEEEEEEEEEEEEEEEEEEAAAAAASSSSSSSSSSSSSSSEEEEEE: {iHopeThisFuckingWorks}"); //spoiler it doesn't work
+      Console.WriteLine($"PLLLLLLLLLLLLLLLLLLLLLLLLLEEEEEEEEEEEEEEEEEEAAAAAASSSSSSSSSSSSSSSEEEEEE: {iHopeThisFuckingWorks.getJourneyVector()}"); //spoiler it doesn't work
 
       //displays result
       DisplayPredictions(predictions);
@@ -38,7 +43,7 @@ namespace BusBoard.ConsoleApp
 
     private static void DisplayPredictions(string predictionsToDisplay)
     { 
-     Console.WriteLine($"Json: {predictionsToDisplay}"); 
+     //Console.WriteLine($"Json: {predictionsToDisplay}"); 
     }
   }
 }
