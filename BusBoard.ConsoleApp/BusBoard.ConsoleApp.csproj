@@ -55,9 +55,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiObjects\Line.cs" />
     <Compile Include="ApiObjects\DepartureAndArrivalPoint.cs" />
     <Compile Include="ApiObjects\Path.cs" />
     <Compile Include="ApiObjects\Returned.cs" />
+    <Compile Include="ApiObjects\Stations.cs" />
     <Compile Include="ApiObjects\StopPoints.cs" />
     <Compile Include="ApiObjects\Instruction.cs" />
     <Compile Include="ApiObjects\Legs.cs" />
