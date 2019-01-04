@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusBoard.ConsoleApp.ApiObjects
+namespace BusBoard.ConsoleApp.JourneyApiObjects
 {
     class DepartureAndArrivalPoint
     {

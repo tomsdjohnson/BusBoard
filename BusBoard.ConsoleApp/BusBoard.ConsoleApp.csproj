@@ -55,21 +55,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApiObjects\Line.cs" />
-    <Compile Include="ApiObjects\DepartureAndArrivalPoint.cs" />
-    <Compile Include="ApiObjects\Path.cs" />
-    <Compile Include="ApiObjects\Returned.cs" />
-    <Compile Include="ApiObjects\Stations.cs" />
-    <Compile Include="ApiObjects\StopPoints.cs" />
-    <Compile Include="ApiObjects\Instruction.cs" />
-    <Compile Include="ApiObjects\Legs.cs" />
-    <Compile Include="ApiObjects\Journeys.cs" />
+    <Compile Include="JourneyApiObjects\DepartureAndArrivalPoint.cs" />
+    <Compile Include="JourneyApiObjects\Path.cs" />
+    <Compile Include="JourneyApiObjects\Returned.cs" />
+    <Compile Include="StationsApiObjects\Stations.cs" />
+    <Compile Include="JourneyApiObjects\StopPoints.cs" />
+    <Compile Include="JourneyApiObjects\Instruction.cs" />
+    <Compile Include="JourneyApiObjects\Legs.cs" />
+    <Compile Include="JourneyApiObjects\Journeys.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TflApi.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="TrainLines.csv" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

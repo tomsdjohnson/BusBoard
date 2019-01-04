@@ -1,8 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using BusBoard.ConsoleApp.ApiObjects;
+using System.Collections.Generic;
+using System.IO;
+using BusBoard.ConsoleApp.JourneyApiObjects;
+using BusBoard.ConsoleApp.StationsApiObjects;
 using Newtonsoft.Json;
 
 namespace BusBoard.ConsoleApp
@@ -13,24 +14,65 @@ namespace BusBoard.ConsoleApp
         {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
 
-            //gets stop inputs
-            var fromStopId = "1000144"; //PromptForStopId(); - EastFinchley
-            var toStopId = "1000336"; //PromptForStopId(); - MarbleArch
+            bool getDirections = PromptForResponse();
+            if (getDirections)
+            {
+                var fromStopId = "1000067"; //example stations - East Finchley
+                var toStopId = "1000144"; //example stations - Marble Arch
 
-            var directionsAsJson = new TflApi().GetJourneyDirections(fromStopId, toStopId); //returns api json as string
-            Returned directions = JsonConvert.DeserializeObject<Returned>(directionsAsJson); //puts json into objects
-            DisplayDirections(directions); //displays result
+                var directionsAsJson = new TflApi().GetJourneyDirections(fromStopId, toStopId); //returns api json as string
+                Returned directions = JsonConvert.DeserializeObject<Returned>(directionsAsJson); //puts json into objects
+                DisplayDirections(directions); //displays result
+            }
+            else
+            {
+                List<string> lines = CvsReader();
 
-            var stationsAsJson = new TflApi().GetAllStationNames(); //returns api json as string
-            Stations[] stations = JsonConvert.DeserializeObject<Stations[]>(stationsAsJson); //puts json into objects
-            Console.Write(stations[0].CommonName);          
+                foreach (var i in lines)
+                {
+                    Console.WriteLine(i);
+                }
+                Console.ReadLine();
+
+                var stationsAsJson = new TflApi().GetAllStationNames(); //returns api json as string
+                Stations[] stations = JsonConvert.DeserializeObject<Stations[]>(stationsAsJson); //puts json into objects
+                Console.Write(stations[0].CommonName);
+            }                   
             Console.ReadLine();
         }
 
-        private static string PromptForStopId()
+        private static bool PromptForResponse()
         {
-            Console.Write("Enter stop ID: ");
-            return Console.ReadLine();
+            while (1.Equals(1))
+            {
+                Console.WriteLine("Plan a journey [1]");
+                Console.WriteLine("Import station names [2]");
+                string ans = Console.ReadLine();
+                Console.WriteLine();
+                if (ans.Equals("1"))
+                {
+                    return true;
+                }
+                if (ans.Equals("2"))
+                {
+                    return false;
+                }              
+                Console.WriteLine("Please enter a valid response");
+                Console.WriteLine();                
+            }
+            return true;
+        }
+
+        private static List<string> CvsReader()
+        {
+            var reader = new StreamReader(File.OpenRead("TrainLines.csv"));
+            List<string> searchList = new List<string>();
+            while (!reader.EndOfStream)
+            {
+                var line = reader.ReadLine();
+                searchList.Add(line);
+            }
+            return searchList;
         }
 
         private static void DisplayDirections(Returned directions)

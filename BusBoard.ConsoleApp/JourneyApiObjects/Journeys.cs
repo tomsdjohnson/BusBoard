@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace BusBoard.ConsoleApp.ApiObjects
+namespace BusBoard.ConsoleApp.JourneyApiObjects
 {
     class Journeys
     {
