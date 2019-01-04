@@ -38,9 +38,9 @@ namespace BusBoard.ConsoleApp
                     Stations[] stations = JsonConvert.DeserializeObject<Stations[]>(stationsAsJson); //puts json into objects
                     foreach (var station in stations)
                     {
-                      allStations.Add(station);   
+                       allStations.Add(station);
                     }
-                    Console.Write("#");
+                 Console.Write("#");
                 }
                 Console.WriteLine("]");
             }                   
