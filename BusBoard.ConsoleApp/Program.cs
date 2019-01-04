@@ -2,8 +2,8 @@
 using System.Net;
 using System.Collections.Generic;
 using System.IO;
-using BusBoard.ConsoleApp.JourneyApiObjects;
-using BusBoard.ConsoleApp.StationsApiObjects;
+using BusBoard.ConsoleApp.models.JourneyApi;
+using BusBoard.ConsoleApp.models.StationsApi;
 using Newtonsoft.Json;
 
 namespace BusBoard.ConsoleApp
@@ -27,16 +27,22 @@ namespace BusBoard.ConsoleApp
             else
             {
                 List<string> lines = CvsReader();
+                List<Stations> allStations = new List<Stations>();
 
-                foreach (var i in lines)
+                Console.WriteLine("Downloading all stations:");
+                Console.Write("[");
+
+                foreach (var line in lines)
                 {
-                    Console.WriteLine(i);
+                    var stationsAsJson = new TflApi().GetAllStationNames(line); //returns api json as string
+                    Stations[] stations = JsonConvert.DeserializeObject<Stations[]>(stationsAsJson); //puts json into objects
+                    foreach (var station in stations)
+                    {
+                      allStations.Add(station);   
+                    }
+                    Console.Write("#");
                 }
-                Console.ReadLine();
-
-                var stationsAsJson = new TflApi().GetAllStationNames(); //returns api json as string
-                Stations[] stations = JsonConvert.DeserializeObject<Stations[]>(stationsAsJson); //puts json into objects
-                Console.Write(stations[0].CommonName);
+                Console.WriteLine("]");
             }                   
             Console.ReadLine();
         }

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.IO;
 
-namespace BusBoard.ConsoleApp.JourneyApiObjects
+namespace BusBoard.ConsoleApp.models.JourneyApi
 {
     class Legs
     {

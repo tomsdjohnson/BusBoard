@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using log4net.Util;
 
-namespace BusBoard.ConsoleApp.JourneyApiObjects
+namespace BusBoard.ConsoleApp.models.JourneyApi
 {
     public class StopPoints
     {

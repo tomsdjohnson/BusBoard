@@ -18,10 +18,11 @@ namespace BusBoard.ConsoleApp
             return predictions;
         }
 
-        public string GetAllStationNames()
+        public string GetAllStationNames(string line)
         {
             var client = new RestClient(@"https://api.tfl.gov.uk");
-            var request = new RestRequest("/Line/tram/StopPoints", Method.GET);
+            var request = new RestRequest("/Line/{line}/StopPoints", Method.GET);
+            request.AddUrlSegment("line", line);
 
             var stations = (client.Execute(request)).Content;
 

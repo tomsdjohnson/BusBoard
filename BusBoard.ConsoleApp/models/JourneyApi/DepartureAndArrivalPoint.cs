@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusBoard.ConsoleApp.StationsApiObjects
+namespace BusBoard.ConsoleApp.models.JourneyApi
 {
-    class Stations
+    class DepartureAndArrivalPoint
     {
-        public string CommonName { get; set; }
         public string IcsCode { get; set; }
+        public string CommonName { get; set; }
     }
 }
