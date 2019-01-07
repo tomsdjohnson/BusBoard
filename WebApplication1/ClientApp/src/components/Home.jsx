@@ -2,15 +2,18 @@ import React, { Component } from 'react';
 
 export class Home extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = { stations: [], loading: true };
 
-        fetch('api/GetStationIds')
-            .then(response => response.json())
-            .then(data => {
-                this.setState({ forecasts: data, loading: false });
-            });
+
+
+
+
+
+
+
+
+
+    constructor(props) {
+
     }
 
     render() {

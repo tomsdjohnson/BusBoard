@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusBoard.ConsoleApp.models.StationsApi
+namespace WebApplication1.Models
 {
-    public class Stations
+    public class Station
     {
         public string CommonName { get; set; }
         public string IcsCode { get; set; }

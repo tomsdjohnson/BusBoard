@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using WebApplication1.Models;
 
 namespace BusBoard.ConsoleApp.models.StationsApi
 {
-    public class Stations
+    public class AllStations
     {
-        public string CommonName { get; set; }
-        public string IcsCode { get; set; }
+        public List<Station> allStations { get; set; }
     }
 }

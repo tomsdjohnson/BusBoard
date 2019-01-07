@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using RestSharp;
 
-namespace BusBoard.ConsoleApp
+namespace WebApplication1
 {
     public class TflApi
     {
