@@ -5,9 +5,8 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Models
 {
-    public class Station
+    public class ListOfStations
     {
-        public string CommonName { get; set; }
-        public string IcsCode { get; set; }
+        public List<Station> listStation { get; set; }
     }
 }

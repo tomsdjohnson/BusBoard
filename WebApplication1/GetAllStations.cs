@@ -4,11 +4,12 @@ using System.IO;
 using Newtonsoft.Json;
 using WebApplication1.Models;
 
+
 namespace WebApplication1
 {
     public class GetAllStations
     {
-        public static List<Station> Get()
+        public static ListOfStations Get()
         {
             List<string> lines = CvsReader();
             List<Station> allStations = new List<Station>();
@@ -22,8 +23,10 @@ namespace WebApplication1
                     allStations.Add(station);
                 }
             }
-        
-            return allStations;
+            ListOfStations allStationsList = new ListOfStations();
+            allStationsList.listStation = allStations;
+
+            return allStationsList;
         }
 
         private static List<string> CvsReader()

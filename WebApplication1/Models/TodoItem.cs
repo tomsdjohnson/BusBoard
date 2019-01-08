@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace WebApplication1.Models
 {
-    public class Station
+    public class TodoItem
     {
-        public string CommonName { get; set; }
-        public string IcsCode { get; set; }
+        public long Id { get; set; }
+        public string Name { get; set; }
+        public bool IsComplete { get; set; }
     }
 }
